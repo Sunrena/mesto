@@ -25,7 +25,7 @@
 * подключить проект к серверу.
 
 ### GitHub Pages
-
+https://sunrena.github.io/mesto/index.html 
 
 ### Автор
 Елена Петрова
