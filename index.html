@@ -30,7 +30,7 @@
                     <img src="./images/dombay.jpg" class="element__image" alt="Домбай">
                     <div class="element__info">
                         <h2 class="element__title">Домбай</h2>
-                        <button class="element__like-btn" type="button"></button>
+                        <button class="element__like-btn element__like-btn_active" type="button"></button>
                     </div>
                 </li>
 
@@ -81,4 +81,18 @@
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
+    <div class="popup popup__edit-profile">
+        <div class="popup__container">
+            <h3 class="form__title">Редактировать профиль</h3>
+            <form class="form">                
+                <fieldset class="form__fieldset">
+                    <input class="form__item form__item_type_name" type="text" placeholder="Введите имя">
+                    <input class="form__item form__item_type_subname" type="text" placeholder="Введите описание">
+                </fieldset>
+                <button class="form__save-btn" type="submit" value="Сохранить">Сохранить</button>
+            </form>
+            <button class="popup__close-btn" type="button"></button>
+        </div>
+    </div>
+<script src="./scripts/index.js"></script>
 </body>
