@@ -9,7 +9,7 @@
     background-color: transparent;
     background-image: url(../../../images/CloseIcon.svg);
     background-size: contain;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
     cursor: pointer;
     transition: opacity 0.7s ease-in-out;
   }

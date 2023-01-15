@@ -8,7 +8,7 @@
     background-image: url(../../../images/EditButton.png);
     background-color: transparent;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
     transition: opacity 0.3s ease-in-out;
     cursor: pointer;
     border: 1px solid #FFFFFF;
