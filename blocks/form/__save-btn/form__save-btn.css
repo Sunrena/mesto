@@ -1,5 +1,5 @@
 .form__save-btn {
-    margin-top: 18px;
+    margin-top: 10px;
     width: 100%;
     height: 50px;
     padding: 0;
@@ -22,6 +22,6 @@
     .form__save-btn {
       font-size: 14px;
       line-height: 17px;
-      margin-top: 15px;
+      margin-top: 10px;
     }
 }
