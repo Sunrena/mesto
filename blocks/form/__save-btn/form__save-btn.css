@@ -12,6 +12,7 @@
     color: #ffffff;
     cursor: pointer;
     transition: opacity 0.7s ease;
+    border-radius: 2px;
   }
   
   .form__save-btn:hover {
