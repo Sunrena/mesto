@@ -25,9 +25,8 @@
         </section>
 
         <section class="elements">
-            <ul class="elements__list">
-
-                <li class="element">
+            <div class="elements__list">
+                <!--<li class="element">
                     <img src="./images/dombay.jpg" class="element__image" alt="Домбай">
                     <div class="element__info">
                         <h2 class="element__title">Домбай</h2>
@@ -73,10 +72,9 @@
                         <h2 class="element__title">Домбай</h2>
                         <button class="element__like-btn" type="button"></button>
                     </div>
-                </li>
-
-            </ul>
-        </section>
+                </li>-->
+            </div>
+          </section>
     </main>
 
     <footer class="footer">
@@ -85,8 +83,8 @@
 
     <div class="popup">
         <div class="popup__container">
-            <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="form" name="profile" method="get" novalidate>
+            <h3 class="form__title">Редактировать профиль</h3>
+            <form class="form form_type_profile">                
                 <fieldset class="form__fieldset">
                     <input class="form__item form__item_type_name" type="text" placeholder="Введите имя" name="name">
                     <input class="form__item form__item_type_subname" type="text" placeholder="Введите описание" name="about">
@@ -96,7 +94,42 @@
             <button class="popup__close-btn" type="button"></button>
         </div>
     </div>
-    <script src="./scripts/index.js"></script>
+
+    <div class="popup popup__add-card">
+        <div class="popup__container">
+            <h3 class="form__title">Новое место</h3>
+            <form class="form form_type_card">
+                <fieldset class="form__fieldset">
+                    <input class="form__item form__item_value_place" type="text" placeholder="Название">
+                    <input class="form__item form__item_value_url" type="url" placeholder="Ссылка на картинку">
+                </fieldset>
+                <button class="form__save-btn" type="submit" value="Создать">Создать</button>
+            </form>
+        <button class="popup__close-btn" type="button"></button>
+        </div>
+    </div>
+
+    <!-- открытие картинки-->
+    <div class="popup popup_type_image">
+        <div class="popup__container popup__container_type_image">
+            <button class="popup__close-btn" type="button"></button>
+            <img class="popup__image" src="#" alt="">
+            <p class="popup__image-title"></p>
+        </div>
+    </div>
+
+    <!--карточка-->
+    <template class="template">
+        <div class="element">
+            <button class="element__trash" type="button"></button>
+            <img class="element__image" src="#" alt="">
+            <div class="element__info">
+                <h2 class="element__title"></h2>
+                <button class="element__like-btn" type="button"></button>
+            </div>
+        </div>
+    </template>
+<script src="./scripts/index.js"></script>
 </body>
 
 </html>
