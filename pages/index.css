@@ -24,6 +24,7 @@
 @import url(../blocks/element/__info/element__info.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__like-btn/element__like-btn.css);
+@import url(../blocks/element/__trash/element__trash.css);
 
 /**Блок footer**/
 @import url(../blocks/footer/footer.css);
@@ -35,6 +36,7 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close-btn/popup__close-btn.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/__add-card/popup__add-card.css);
 
 /**form**/
 @import url(../blocks/form/form.css);
