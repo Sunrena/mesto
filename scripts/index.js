@@ -1,29 +1,29 @@
 //Карточки из массива
 const initialCards = [
-    {
-      name: 'Ещё котик',
-      link: 'https://downloader.disk.yandex.ru/preview/86adbfaf61803aa551f7ce1afc04068ed6348a71b9038c31b35452b1afcdcb72/63e2f431/-kzLil_M5jDkyzf2kJP-lkl5leYfuGGpF8Pumood3-4qSJYjrTYIvOiusMoFAM0U4307AaFweG3hOQNdCimjaw%3D%3D?uid=0&filename=1447765801_80236817.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'
-    },
-    {
-      name: 'Котик',
-      link: 'https://downloader.disk.yandex.ru/preview/dadec16e5f45a6aac490b5bf0aa31e7d44ab469d98fcbf3eef042b5677794153/63e2f46f/P7gZNM-TLpuFygzPAfC3TL9_dKCtANwFNJHHMVUUc_Kw0q0EeHGcUay875bJiq5IGwpJT2r-NHiIpC4uK4tA8w%3D%3D?uid=0&filename=1611846316_9-p-foni-s-kosmosom-i-kotami-9.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'
-    },
-    {
-      name: 'Грут',
-      link: 'https://downloader.disk.yandex.ru/preview/4353af272e33bbed1b910323f9514baaa3af742e02dda36f4d8f96a78a3094c1/63e2f4ab/LYgTzNFq235t-AQ9UOE2OBdKqdviy6FVhuoL6_PWBHc-MX_aWDiqDjWYvdb6nMdSzNsGQogXnjUTDVl2u4N9Rg%3D%3D?uid=0&filename=grut-1024x576.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'
-    },
-    {
-      name: 'Завтра пятница?',
-      link: 'https://downloader.disk.yandex.ru/preview/c42d69b6a3eb6b3c9c45a8dd13537f0bf28d912442f7e092f5dc9351ad3ab4bf/63e2f6f5/pkhxThI0g0rTzXsM3Qrtj3l2Ri5YFAnrQ3yGsMid0fLvyjZO5WCRZ0iDH_PMZ3GYuHYFI9vs04wQpB8m3jeHiA%3D%3D?uid=0&filename=photo_2023-01-10_10-52-16.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'
-    },
-    {
-      name: 'Делаем проект',
-      link: 'https://downloader.disk.yandex.ru/preview/b02e0069986f94c9ad0e225894237d01e22819d1b35665e5bfe5513d7c41a2d8/63e2f720/QNMq-3Lwg7NJZhJPA5qbYbTAzuAim94d2pP0QGYvPC6WNowTSqajLDtw3Jf0JhoisKX3JmfLUWqT7t-zTwkI-g%3D%3D?uid=0&filename=photo_2023-01-30_19-27-19.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'
-    },
-    {
-      name: 'Просто хобби',
-      link: 'https://downloader.disk.yandex.ru/preview/0db8e8e915c4ece86925c04fe9c91613ac617dbaa0d336760d808702b905cd35/63e2f743/Zb4ANHzKYM3Y3NHeKX9vla0_r3O2zrxUnWjp3Sur4M3G8IZTNngjT9C5WBHUobBVJ0nrT69ShWiWi3DgZvL4bg%3D%3D?uid=0&filename=photo_2023-01-02_14-51-57.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'
-    }
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
 ];
 
 //поля формы редактирования
