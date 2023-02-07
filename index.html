@@ -26,7 +26,7 @@
 
         <section class="elements">
             <div class="elements__list"></div>
-          </section>
+        </section>
     </main>
 
     <footer class="footer">
@@ -36,12 +36,14 @@
     <div class="popup popup_edit-profile">
         <div class="popup__container">
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form popup__form_type_profile">                
+            <form class="popup__form popup__form_type_profile">
                 <fieldset class="popup__form-fieldset">
                     <input class="popup__item popup__item_type_name" type="text" placeholder="Введите имя" name="name">
-                    <input class="popup__item popup__item_type_subname" type="text" placeholder="Введите описание" name="about">
+                    <input class="popup__item popup__item_type_subname" type="text" placeholder="Введите описание"
+                        name="about">
                 </fieldset>
-                <button class="popup__save-btn" type="submit" value="Сохранить" aria-label="сохранить профиль">Сохранить</button>
+                <button class="popup__save-btn" type="submit" value="Сохранить"
+                    aria-label="сохранить профиль">Сохранить</button>
             </form>
             <button class="popup__close-btn" type="button" aria-label="закрыть форму"></button>
         </div>
@@ -52,8 +54,10 @@
             <h3 class="popup__title">Новое место</h3>
             <form class="popup__form popup__form_type_card" name="form" method="post" novalidate>
                 <fieldset class="popup__form-fieldset">
-                    <input class="popup__item popup__item_value_place" type="text" placeholder="Название" name="place" required>
-                    <input class="popup__item popup__item_value_url" type="url" placeholder="Ссылка на картинку" name="link" required>
+                    <input class="popup__item popup__item_value_place" type="text" placeholder="Название" name="place"
+                        required>
+                    <input class="popup__item popup__item_value_url" type="url" placeholder="Ссылка на картинку"
+                        name="link" required>
                 </fieldset>
                 <button class="popup__save-btn" type="submit" aria-label="создать карточку">Создать</button>
             </form>
@@ -79,7 +83,7 @@
             </div>
         </div>
     </template>
-<script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
