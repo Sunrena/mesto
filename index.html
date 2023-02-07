@@ -18,62 +18,14 @@
             <img class="profile__avatar" alt="Жак-Ив Кусто на фоне моря" src="./images/Avatar.png">
             <div class="profile__info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
-                <button class="profile__edit-btn" type="button"></button>
+                <button class="profile__edit-btn" type="button" aria-label="редактировать профиль"></button>
                 <p class="profile__subtitle">Исследователь океана</p>
             </div>
-            <button class="profile__add-btn" type="button"></button>
+            <button class="profile__add-btn" type="button" aria-label="добавить карточку"></button>
         </section>
 
         <section class="elements">
-            <div class="elements__list">
-                <!--<li class="element">
-                    <img src="./images/dombay.jpg" class="element__image" alt="Домбай">
-                    <div class="element__info">
-                        <h2 class="element__title">Домбай</h2>
-                        <button class="element__like-btn element__like-btn_active" type="button"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/elbrus.png" class="element__image" alt="Гора Эльбрус">
-                    <div class="element__info">
-                        <h2 class="element__title">Гора Эльбрус</h2>
-                        <button class="element__like-btn" type="button"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/karachaevsk.jpg" class="element__image" alt="Карачаевск">
-                    <div class="element__info">
-                        <h2 class="element__title">Карачаевск</h2>
-                        <button class="element__like-btn" type="button"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/elbrus.png" class="element__image" alt="Эльбрус">
-                    <div class="element__info">
-                        <h2 class="element__title">Эльбрус</h2>
-                        <button class="element__like-btn" type="button"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/karachaevsk.jpg" class="element__image" alt="Карачаево-Черкесия">
-                    <div class="element__info">
-                        <h2 class="element__title">Карачаево-Черкесия</h2>
-                        <button class="element__like-btn" type="button"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img src="./images/dombay.jpg" class="element__image" alt="Домбай">
-                    <div class="element__info">
-                        <h2 class="element__title">Домбай</h2>
-                        <button class="element__like-btn" type="button"></button>
-                    </div>
-                </li>-->
-            </div>
+            <div class="elements__list"></div>
           </section>
     </main>
 
@@ -81,7 +33,7 @@
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup__edit-profile">
         <div class="popup__container">
             <h3 class="form__title">Редактировать профиль</h3>
             <form class="form form_type_profile">                
@@ -89,36 +41,34 @@
                     <input class="form__item form__item_type_name" type="text" placeholder="Введите имя" name="name">
                     <input class="form__item form__item_type_subname" type="text" placeholder="Введите описание" name="about">
                 </fieldset>
-                <button class="form__save-btn" type="submit" value="Сохранить">Сохранить</button>
+                <button class="form__save-btn" type="submit" value="Сохранить" aria-label="сохранить профиль">Сохранить</button>
             </form>
-            <button class="popup__close-btn" type="button"></button>
+            <button class="popup__close-btn" type="button" aria-label="закрыть форму"></button>
         </div>
     </div>
 
     <div class="popup popup__add-card">
         <div class="popup__container">
             <h3 class="form__title">Новое место</h3>
-            <form class="form form_type_card">
+            <form class="form form_type_card" name="form" method="post" novalidate>
                 <fieldset class="form__fieldset">
-                    <input class="form__item form__item_value_place" type="text" placeholder="Название">
-                    <input class="form__item form__item_value_url" type="url" placeholder="Ссылка на картинку">
+                    <input class="form__item form__item_value_place" type="text" placeholder="Название" name="place" required>
+                    <input class="form__item form__item_value_url" type="url" placeholder="Ссылка на картинку" name="link" required>
                 </fieldset>
-                <button class="form__save-btn" type="submit" value="Создать">Создать</button>
+                <button class="form__save-btn" type="submit" aria-label="создать карточку">Создать</button>
             </form>
-        <button class="popup__close-btn" type="button"></button>
+            <button class="popup__close-btn" type="button" aria-label="закрыть форму"></button>
         </div>
     </div>
 
-    <!-- открытие картинки-->
     <div class="popup popup_type_image">
         <div class="popup__container popup__container_type_image">
-            <button class="popup__close-btn" type="button"></button>
+            <button class="popup__close-btn" type="button" aria-label="закрыть картинку"></button>
             <img class="popup__image" src="#" alt="">
             <p class="popup__image-title"></p>
         </div>
     </div>
 
-    <!--карточка-->
     <template class="template">
         <div class="element">
             <button class="element__trash" type="button"></button>
