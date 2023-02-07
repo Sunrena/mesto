@@ -1,4 +1,4 @@
-.form__save-btn {
+.popup__save-btn {
     margin-top: 10px;
     width: 100%;
     height: 50px;
@@ -15,12 +15,12 @@
     border-radius: 2px;
   }
   
-  .form__save-btn:hover {
+  .popup__save-btn:hover {
     opacity: 0.8;
   }
   
 @media screen and (max-width: 500px) {
-    .form__save-btn {
+    .popup__save-btn {
       font-size: 14px;
       line-height: 17px;
       margin-top: 10px;

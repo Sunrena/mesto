@@ -27,8 +27,8 @@ const initialCards = [
 ];
 
 //поля формы редактирования
-let nameInput = document.querySelector('.form__item_type_name');
-let jobInput = document.querySelector('.form__item_type_subname');
+let nameInput = document.querySelector('.popup__item_type_name');
+let jobInput = document.querySelector('.popup__item_type_subname');
 let nameProfile = document.querySelector('.profile__title');
 let jobProfile = document.querySelector('.profile__subtitle');
 
@@ -38,12 +38,12 @@ const closeButton = document.querySelectorAll('.popup__close-btn');
 const addButton = document.querySelector('.profile__add-btn');
 
 //формы
-const formProfile = document.querySelector('.form_type_profile');
-const formCard = document.querySelector('.form_type_card');
+const formProfile = document.querySelector('.popup__form_type_profile');
+const formCard = document.querySelector('.popup__form_type_card');
 
 //попап профиля и карточки
-const popupProfile = document.querySelector('.popup__edit-profile');
-const popupAddCard = document.querySelector('.popup__add-card');
+const popupProfile = document.querySelector('.popup_edit-profile');
+const popupAddCard = document.querySelector('.popup_add-card');
 
 //попап изображения
 const popupTypeImage = document.querySelector('.popup_type_image');
@@ -52,8 +52,8 @@ const titleImage = popupTypeImage.querySelector('.popup__image-title');
 
 //для создания карточки
 const popup = document.querySelectorAll('.popup');
-const imgName = document.querySelector('.form__item_value_place');
-const imgLink = document.querySelector('.form__item_value_url');
+const imgName = document.querySelector('.popup__item_value_place');
+const imgLink = document.querySelector('.popup__item_value_url');
 const cardTemplate = document.querySelector('.template').content;
 const cardContainer = document.querySelector('.elements__list');
 
