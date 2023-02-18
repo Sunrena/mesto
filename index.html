@@ -33,14 +33,17 @@
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
+    <!--Редактирование профиля-->
     <div class="popup popup_edit-profile">
         <div class="popup__container">
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form popup__form_type_profile">
+            <form class="popup__form popup__form_type_profile" name="form"  method="post" novalidate>
                 <fieldset class="popup__form-fieldset">
-                    <input class="popup__item popup__item_type_name" type="text" placeholder="Введите имя" name="name">
+                    <input class="popup__item popup__item_type_name" type="text" placeholder="Введите имя" name="name" minlength="2" maxlength="40" required>
+                    <span class="popup__error"></span>
                     <input class="popup__item popup__item_type_subname" type="text" placeholder="Введите описание"
-                        name="about">
+                        name="about" minlength="2" maxlength="200" required>
+                    <span class="popup__error"></span>
                 </fieldset>
                 <button class="popup__save-btn" type="submit" value="Сохранить"
                     aria-label="сохранить профиль">Сохранить</button>
@@ -49,23 +52,26 @@
         </div>
     </div>
 
+    <!--Добавить карточку (место)-->
     <div class="popup popup_add-card">
         <div class="popup__container">
             <h3 class="popup__title">Новое место</h3>
             <form class="popup__form popup__form_type_card" name="form" method="post" novalidate>
                 <fieldset class="popup__form-fieldset">
                     <input class="popup__item popup__item_value_place" type="text" placeholder="Название" name="place"
-                        required>
+                    minlength="2" maxlength="30" required>
+                    <span class="popup__error"></span>
                     <input class="popup__item popup__item_value_url" type="url" placeholder="Ссылка на картинку"
                         name="link" required>
+                    <span class="popup__error"></span>
                 </fieldset>
                 <button class="popup__save-btn" type="submit" aria-label="создать карточку">Создать</button>
             </form>
             <button class="popup__close-btn" type="button" aria-label="закрыть форму"></button>
         </div>
     </div>
-    
-<!--Изображение-->
+
+<!--Просмотреть Изображение-->
     <div class="popup popup_type_image">
         <div class="popup__container popup__container_type_image">
             <button class="popup__close-btn" type="button" aria-label="закрыть картинку"></button>
@@ -74,6 +80,7 @@
         </div>
     </div>
 
+    <!--Карточка-->
     <template class="template">
         <div class="element">
             <button class="element__trash" type="button"></button>
@@ -85,6 +92,7 @@
         </div>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 
 </html>

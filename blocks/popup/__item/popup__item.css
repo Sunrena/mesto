@@ -13,3 +13,7 @@
     overflow: hidden;
     position: relative;
 }
+
+.popup__item:focus, .popup__item:active {
+    outline: 3px solid #0099ff;
+}
