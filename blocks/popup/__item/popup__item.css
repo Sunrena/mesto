@@ -15,5 +15,5 @@
 }
 
 .popup__item:focus, .popup__item:active {
-    outline: 3px solid #0099ff;
+    outline: 2px solid #2a9fee;
 }

@@ -59,10 +59,12 @@ const cardContainer = document.querySelector('.elements__list');
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeKeydown);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeKeydown);
 }
 
 //редактирование профиля
@@ -122,10 +124,13 @@ editButton.addEventListener('click', function () {
   openPopup(popupProfile);
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
+  resetValidation(formProfile, enableValidation);
 });
 
 addButton.addEventListener('click', function () {
+  resetValidation(formCard, enableValidation);
   openPopup(popupAddCard);
+  formCard.reset();
 });
 
 closeButtons.forEach((e) =>
@@ -133,6 +138,22 @@ closeButtons.forEach((e) =>
     closePopup(e.target.closest('.popup'));
   })
 );
+
+function closeKeydown(evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+}
+
+popups.forEach((e) =>
+  e.addEventListener('click', function (evt) {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup(evt.target);
+    }
+  })
+);
+
 
 formProfile.addEventListener('submit', editProfile);
 formCard.addEventListener('submit', addItems);
