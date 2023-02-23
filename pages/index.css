@@ -47,4 +47,5 @@
 @import url(../blocks/popup/__save-btn/_inactive/popup__save-btn_inactive.css);
 @import url(../blocks/popup/__error/popup__error.css);
 @import url(../blocks/popup/__item/_type/popup__item_type_error.css);
+@import url(../blocks/popup/__error/_visible/popup__error_visible.css);
 
