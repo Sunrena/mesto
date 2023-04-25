@@ -1,3 +1,7 @@
+import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
+import { enableValidation } from "./enableValidation.js";
+
 //Карточки из массива
 const initialCards = [
   {
@@ -58,11 +62,11 @@ const imgLink = document.querySelector('.popup__item_value_url');
 const cardContainer = document.querySelector('.elements__list');
 
 //валидация форм
-const validationProfile = new FormValidation(enableValidation, formProfile);
+const validationProfile = new FormValidator(enableValidation, formProfile);
 validationProfile.enableValidate();
 validationProfile.resetValidation();
 
-const validationCard = new FormValidation(enableValidation, formCard);
+const validationCard = new FormValidator(enableValidation, formCard);
 validationCard.enableValidate();
 validationCard.resetValidation();
 
@@ -147,68 +151,4 @@ popups.forEach((e) =>
 formProfile.addEventListener('submit', editProfile);
 formCard.addEventListener('submit', addItems);
 
-
-class Card {
-  constructor(name, link, templateSelector) {
-    this._name = name;
-    this._link = link;
-    this._templateSelector = templateSelector;
-  }
-
-  _getTemplate() {
-    const cardElement = document
-      .querySelector(this._templateSelector)
-      .content.querySelector('.element')
-      .cloneNode(true);
-    return cardElement;
-  }
-
-  generateCard() {
-    this._element = this._getTemplate;
-    this._title = this._element.querySelector('.element__title');
-    this._title.textContent = this._name;
-    this._picture = this._element.querySelector('.element__image');
-    this._picture.alt = this._name;
-    this._picture.src = this._link;
-
-    this._setEventListener();
-
-    return this._element;
-  }
-
-  _likeBtn() {
-    this._element
-    .querySelector('.element__like-btn')
-    .classList.toggle('element__like-btn_active');
-  }
-
-  _deleteCard() {
-    this._element.remove();
-  }
-
-  _openPopupPic() {
-    openPopup(popupImg);
-    popupImage.src = this._link;
-    popupImage.alt = this._name;
-    titleImage.textContent = this._name;
-  }
-
-  _setEventListener() {
-    this._element
-    .querySelector('.element__trash')
-    .addEventListener('click', () => {
-      this._deleteCard();
-    })
-
-    this._element
-    .querySelector('.element__like-btn')
-    .addEventListener('click', () => {
-      this._likeBtn();
-    })
-
-    this._picture.addEventListener('click', () => {
-      this._openPopupPic();
-    })
-  }
-
-}
+export {titleImage, popupImage, popupTypeImage, openPopup}
