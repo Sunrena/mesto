@@ -15,7 +15,7 @@ export default class Card {
     }
 
     generateCard() {
-        this._element = this._getTemplate;
+        this._element = this._getTemplate();
         this._title = this._element.querySelector('.element__title');
         this._title.textContent = this._name;
         this._picture = this._element.querySelector('.element__image');
