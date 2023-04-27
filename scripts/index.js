@@ -1,6 +1,6 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
-import { enableValidation } from "./enableValidation.js";
+import { objectValidation } from "./objectValidation.js";
 
 //Карточки из массива
 const initialCards = [
@@ -62,11 +62,10 @@ const imgLink = document.querySelector('.popup__item_value_url');
 const cardContainer = document.querySelector('.elements__list');
 
 //валидация форм
-const validationProfile = new FormValidator(enableValidation, formProfile);
+const validationProfile = new FormValidator(objectValidation, formProfile);
 validationProfile.enableValidate();
-validationProfile.resetValidation();
 
-const validationCard = new FormValidator(enableValidation, formCard);
+const validationCard = new FormValidator(objectValidation, formCard);
 validationCard.enableValidate();
 validationCard.resetValidation();
 

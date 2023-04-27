@@ -1,4 +1,4 @@
-const enableValidation = {
+const objectValidation = {
     formSelector: '.popup__form',
     inputSelector: '.popup__item',
     submitButtonSelector: '.popup__save-btn',
@@ -7,4 +7,4 @@ const enableValidation = {
     errorClass: 'popup__error_visible'
 };
 
-export {enableValidation}
+export {objectValidation}
