@@ -67,7 +67,6 @@ validationProfile.enableValidate();
 
 const validationCard = new FormValidator(objectValidation, formCard);
 validationCard.enableValidate();
-validationCard.resetValidation();
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
