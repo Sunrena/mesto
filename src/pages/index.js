@@ -28,66 +28,55 @@ const validationCard = new FormValidator(objectValidation, formCard);
 validationCard.enableValidate();
 
 const userInfo = new UserInfo({
-  nameProfile: '.profile__title',
-  jobProfile: '.profile__subtitle',
+  nameProfileSelector: '.profile__title',
+  jobProfileSelector: '.profile__subtitle',
 });
 
 const popupTypeImage = new PopupWithImage('.popup_type_image');
 
 //создание
-function createCard(objectValidation) {
-  const card = new Card(objectValidation);
-  const cardElement = card.generateCard();
-  return cardElement;
+function createCard(name, link) {
+  const card = new Card({
+    name,
+    link,
+    templateSelector: '.template',
+    handleCardClick: (name, link) => {
+      popupTypeImage.open(name, link);
+    }
+  })
+  return card.generateCard();
 }
 
 const cardContainer = new Section({
   data: initialCards,
   renderer: (item) => {
-    const card = createCard({
-      name: item.name,
-      link: item.link,
-      templateSelector: '.template',
-      handleCardClick: (name, link) => {
-        popupTypeImage.open(name, link);
-      }
-    });
-    cardContainer.addItem(card);
-  }
-},
-'.elements__list'
-)
+    cardContainer.addItem(createCard(item.name, item.link));
+  },
+  selector: '.elements__list',
+}) 
 
 cardContainer.renderItems();
+
 
 //экземпляры класса PopupWithForm
 const popupAddCard = new PopupWithForm({
   popupSelector: '.popup_add-card',
   handleFormSubmit: ({ place, link}) => {
-    const card = createCard({
-      name: place,
-      link: link,
-      templateSelector: '.template',
-      handleCardClick: (name, link) => {
-        popupTypeImage.open(name, link);
-      }
-    });
-    cardContainer.addItem(card);
-  }
-});
+    cardContainer.addItem(createCard(place, link));
+    }
+  } 
+);
 
 const popupProfile = new PopupWithForm({
   popupSelector: '.popup_edit-profile',
-  handleFormSubmit: ({ name, about}) => {
-    userInfo.setUserInfo({ name, about});
-  }
-})
+  handleFormSubmit: inputValues => userInfo.setUserInfo(inputValues),
+});
 
-//редактирование профиля
 function editProfile() {
   popupProfile.open();
-  nameInput.value = userInfo.getUserInfo()['name'];
-  jobInput.value = userInfo.getUserInfo()['about'];
+  const user = userInfo.getUserInfo();
+  user['name'];
+  user['about'];
   validationProfile.resetValidation();
 }
 
@@ -95,7 +84,6 @@ function addCard() {
   validationCard.resetValidation();
   popupAddCard.open();
 }
-
 
 editButton.addEventListener('click', editProfile);
 
