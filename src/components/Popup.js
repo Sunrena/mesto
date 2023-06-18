@@ -33,16 +33,4 @@ export default class Popup {
               }
         })
     }
-
-    loading(isLoading, text) {
-        if (isLoading) {
-            this._text = this._buttonSave.textContent;
-            this._buttonSave.textContent = text;
-        } else {
-            this._buttonSave.textContent = this._text;
-        }
-
-        if (!this._buttonSave)
-        return;
-    }
 }

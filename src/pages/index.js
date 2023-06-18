@@ -1,7 +1,7 @@
 import "../pages/index.css";
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
-import { objectValidation, initialCards } from "../utils/constants.js";
+import { objectValidation } from "../utils/constants.js";
 import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -24,7 +24,6 @@ const formAvatar = document.querySelector('.popup__form_type_avatar');
 
 //изменение аватара
 const buttonEditAvatar = document.querySelector('.profile__avatar-btn');
-const inputAvatar = document.querySelector('.popup__item_type_avatar');
 const profileAvatar = document.querySelector('.profile__avatar');
 
 //валидация форм
@@ -36,6 +35,7 @@ validationCard.enableValidate();
 
 const validationAvatar = new FormValidator(objectValidation, formAvatar);
 validationAvatar.enableValidate();
+
 
 const api = new Api({
   headers: {
@@ -100,7 +100,7 @@ const cardContainer = new Section({
 const popupAddCard = new PopupWithForm({
   popupSelector: '.popup_add-card',
   handleFormSubmit: (data) => {
-    popupAddCard.loading(true, 'Сохранение карточки...');
+    popupAddCard.renderLoading(true, 'Сохранение карточки...');
     api.createCard(data)
       .then((newCard) => {
         cardContainer.addItem(createCard(newCard));
@@ -108,7 +108,7 @@ const popupAddCard = new PopupWithForm({
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        popupAddCard.loading(false);
+        popupAddCard.renderLoading(false);
       });
   }
 }
@@ -117,7 +117,7 @@ const popupAddCard = new PopupWithForm({
 const popupProfile = new PopupWithForm({
   popupSelector: '.popup_edit-profile',
   handleFormSubmit: (item) => {
-    popupProfile.loading(true, 'Сохранение профиля...');
+    popupProfile.renderLoading(true, 'Сохранение профиля...');
     api.setUserInfo(item)
       .then((data) => {
         userInfo.setUserInfo(data);
@@ -125,7 +125,7 @@ const popupProfile = new PopupWithForm({
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        popupProfile.loading(false);
+        popupProfile.renderLoading(false);
       });
   }
 });
@@ -133,7 +133,7 @@ const popupProfile = new PopupWithForm({
 const popupAddAvatar = new PopupWithForm({
   popupSelector: '.popup_edit-avatar',
   handleFormSubmit: (item) => {
-    popupAddAvatar.loading(true, 'Сохранение аватара...');
+    popupAddAvatar.renderLoading(true, 'Сохранение аватара...');
     api.setAvatar(item)
       .then((data) => {
         userInfo.setUserInfo(data);
@@ -141,7 +141,7 @@ const popupAddAvatar = new PopupWithForm({
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        popupAddAvatar.loading(false);
+        popupAddAvatar.renderLoading(false);
       });
   }
 });
@@ -150,7 +150,7 @@ const popupAddAvatar = new PopupWithForm({
 const popupDeleteCard = new PopupWithConfirm({
   popupSelector: '.popup_delete-card',
   handleFormSubmit: (card, cardId) => {
-    popupDeleteCard.loading(true, 'Удаление карточки...');
+    popupDeleteCard.renderLoading(true, 'Удаление карточки...');
     api.deleteCard(cardId)
       .then(() => {
         card.deleteCard();
@@ -158,7 +158,7 @@ const popupDeleteCard = new PopupWithConfirm({
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        popupDeleteCard.loading(false);
+        popupDeleteCard.renderLoading(false);
       });
   }
 })
@@ -177,10 +177,8 @@ function addCard() {
 }
 
 function editAvatar() {
-  popupAddAvatar.open();
-  const user = userInfo.getUserInfo();
-  inputAvatar.value = user['avatar'];
   validationAvatar.resetValidation();
+  popupAddAvatar.open();
 }
 
 editButton.addEventListener('click', editProfile);

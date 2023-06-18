@@ -56,3 +56,5 @@
 @import url(../blocks/popup/_type_image/popup_type_image.css);
 @import url(../blocks/popup/__container/_delete-card/popup__container_delete-card.css);
 @import url(../blocks/popup/_delete-card/popup_delete-card.css);
+@import url(../blocks/popup/_edit-avatar/popup_edit-avatar.css);
+@import url(../blocks/popup/__container/_type/popup__container_type_avatar.css);

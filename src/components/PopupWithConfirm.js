@@ -12,6 +12,18 @@ export default class PopupWithConfirm extends Popup {
         this._cardId = cardId;
     }
 
+    renderLoading(isLoading, text) {
+        if (isLoading) {
+            this._text = this._buttonSave.textContent;
+            this._buttonSave.textContent = text;
+        } else {
+            this._buttonSave.textContent = this._text;
+        }
+
+        if (!this._buttonSave)
+        return;
+    }
+    
     setEventListeners() {
         super.setEventListeners();
         this._buttonSave.addEventListener('click', () => {
