@@ -60,7 +60,7 @@ export default class Api {
                         }).then(this._checkResponse);
     }
 
-    putLikeCard(cardId) {
+/*     putLikeCard(cardId) {
         return fetch(`${this._baseURL}cards/${cardId}/likes`, {
                             method: 'PUT',
                             headers: this._headers,
@@ -72,5 +72,19 @@ export default class Api {
                             method: 'DELETE',
                             headers: this._headers,
                         }).then(this._checkResponse);
+    } */
+
+    switchLikeCard(cardId, isLiked) {
+        if (!isLiked) {
+            return fetch(`${this._baseURL}cards/${cardId}/likes`, {
+                        method: 'PUT',
+                        headers: this._headers,
+                    }).then(this._checkResponse);
+        } else {
+            return fetch(`${this._baseURL}cards/${cardId}/likes`, {
+                        method: 'DELETE',
+                        headers: this._headers,
+                    }).then(this._checkResponse);
+        }
     }
 }

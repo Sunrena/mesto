@@ -67,7 +67,7 @@ function createCard(data) {
       popupDeleteCard.open(card, data._id);
     },
 
-    handleDeleteLike: () => {
+/*     handleDeleteLike: () => {
       api.deleteLikeCard(data._id)
         .then((data) => {
           card.deleteLike();
@@ -75,9 +75,9 @@ function createCard(data) {
           card.switchLike();
         })
         .catch((err) => console.log(err));
-    },
+    }, */
 
-    handleLike: () => {
+/*     handleLike: () => {
       api.putLikeCard(data._id)
         .then((data) => {
           card.likeBtn();
@@ -85,6 +85,14 @@ function createCard(data) {
           card.showLike(data.likes.length);
         })
         .catch((err) => console.log(err));
+    } */
+
+    handleLike: () => {
+      api.switchLikeCard(card.idCard, card.isLiked(card.dataLikes))
+      .then(res => {
+        card.switchLike(res);
+      })
+      .catch((err) => console.log(err));
     }
   });
 
@@ -155,11 +163,11 @@ const popupAddAvatar = new PopupWithForm({
 //Удаление карточки (попап)
 const popupDeleteCard = new PopupWithConfirm({
   popupSelector: '.popup_delete-card',
-  handleFormSubmit: (newCard, cardId) => {
+  handleFormSubmit: (card, cardId) => {
     popupDeleteCard.loading(true, 'Удаление карточки...');
     api.deleteCard(cardId)
       .then(() => {
-        newCard.deleteCard();
+        card.deleteCard();
         popupDeleteCard.close();
       })
       .catch((err) => console.log(err))
