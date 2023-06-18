@@ -7,6 +7,7 @@
     position: absolute;
     border: none;
     transition: 0.3s linear;
+    display: none;
 }
 
 .element__trash:hover {

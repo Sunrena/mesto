@@ -2,6 +2,7 @@ export default class Popup {
     constructor(popupSelector) {
         this._popup = document.querySelector(popupSelector);
         this._handleEscClose = this._handleEscClose.bind(this);
+        this._buttonSave = this._popup.querySelector('.popup__save-btn_state_save');
     }
 
     open() {
@@ -31,5 +32,17 @@ export default class Popup {
                 this.close();
               }
         })
+    }
+
+    loading(isLoading, text) {
+        if (isLoading) {
+            this._text = this._buttonSave.textContent;
+            this._buttonSave.textContent = text;
+        } else {
+            this._buttonSave.textContent = this._text;
+        }
+
+        if (!this._buttonSave)
+        return;
     }
 }
