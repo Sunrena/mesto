@@ -45,4 +45,6 @@
 .popup_type_image{background-color:rgba(0,0,0,.9)}
 .popup__container_delete-card{min-height:181px}
 .popup_delete-card{background-color:rgba(0,0,0,.5)}
+.popup_edit-avatar{background-color:rgba(0,0,0,.5)}
+.popup__container_type_avatar{min-height:272px}
 
