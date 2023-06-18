@@ -95,12 +95,6 @@ export default class Card {
                 this._handleDeleteCard(this);
             });
 
-/*         this._likeButton.addEventListener('click', () => {
-            if (!this._likeButton.classList.contains('element__like-btn_active'))
-            {this._handleLike(this)} else {
-                this._handleDeleteLike(this.idCard, this._card)
-            }
-            }); */
 
         this._likeButton.addEventListener('click', () => {
             this._handleLike(this);

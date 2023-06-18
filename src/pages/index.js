@@ -67,25 +67,14 @@ function createCard(data) {
       popupDeleteCard.open(card, data._id);
     },
 
-/*     handleDeleteLike: () => {
-      api.deleteLikeCard(data._id)
-        .then((data) => {
+    handleDeleteLike: () => {
+      api.switchLikeCard(card.idCard, card.isLiked(card.dataLikes))
+        .then((res) => {
+          card.switchLike(res);
           card.deleteLike();
-          card.showLike(data.likes.length);
-          card.switchLike();
         })
         .catch((err) => console.log(err));
-    }, */
-
-/*     handleLike: () => {
-      api.putLikeCard(data._id)
-        .then((data) => {
-          card.likeBtn();
-          card.switchLike();
-          card.showLike(data.likes.length);
-        })
-        .catch((err) => console.log(err));
-    } */
+    },
 
     handleLike: () => {
       api.switchLikeCard(card.idCard, card.isLiked(card.dataLikes))
@@ -106,9 +95,6 @@ const cardContainer = new Section({
   },
   selector: '.elements__list',
 })
-
-//cardContainer.renderItems();
-
 
 //экземпляры класса PopupWithForm
 const popupAddCard = new PopupWithForm({
@@ -194,7 +180,6 @@ function editAvatar() {
   popupAddAvatar.open();
   const user = userInfo.getUserInfo();
   inputAvatar.value = user['avatar'];
-  //inputAvatar.value = userInfo.getUserInfo()['avatar'];
   validationAvatar.resetValidation();
 }
 

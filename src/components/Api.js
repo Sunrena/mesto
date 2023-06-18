@@ -60,20 +60,6 @@ export default class Api {
                         }).then(this._checkResponse);
     }
 
-/*     putLikeCard(cardId) {
-        return fetch(`${this._baseURL}cards/${cardId}/likes`, {
-                            method: 'PUT',
-                            headers: this._headers,
-                        }).then(this._checkResponse);
-    }
-
-    deleteLikeCard(cardId) {
-        return fetch(`${this._baseURL}cards/${cardId}/likes`, {
-                            method: 'DELETE',
-                            headers: this._headers,
-                        }).then(this._checkResponse);
-    } */
-
     switchLikeCard(cardId, isLiked) {
         if (!isLiked) {
             return fetch(`${this._baseURL}cards/${cardId}/likes`, {
